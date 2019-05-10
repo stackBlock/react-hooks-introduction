@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+// import "materialize-css/dist/css/materialize.min.css";
 
-import CharPicker from './components/CharPicker';
-import Character from './components/Character';
+import CharPicker from "./components/CharPicker";
+import Character from "./components/Character";
 
 const App = props => {
   // const [state, setState] = useState({
@@ -12,7 +13,7 @@ const App = props => {
 
   const [selectedCharacter, setSelectedCharacter] = useState(1);
 
-  const [chosenSide, setChosenSide] = useState('light');
+  const [chosenSide, setChosenSide] = useState("light");
 
   const sideHandler = side => {
     setChosenSide(side);
@@ -35,9 +36,9 @@ const App = props => {
         onCharSelect={charSelectHandler}
       />
       <Character selectedChar={selectedCharacter} />
-      <button onClick={sideHandler.bind(this, 'light')}>Light Side</button>
-      <button onClick={sideHandler.bind(this, 'dark')}>Dark Side</button>
-      {chosenSide === 'dark' && (
+      <button onClick={sideHandler.bind(this, "light")}>Light Side</button>
+      <button onClick={sideHandler.bind(this, "dark")}>Dark Side</button>
+      {chosenSide === "dark" && (
         <button onClick={destructionHandler}>DESTROY!</button>
       )}
     </React.Fragment>
